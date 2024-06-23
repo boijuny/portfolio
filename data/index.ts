@@ -226,7 +226,7 @@ export const workExperience = [
   },
   {
     id: 2,
-    title: "Short-tem Research Project",
+    title: "Short-term Research Project",
     desc: "Research work on visual servo-control of a manipulator robot on tree-like structures. - 2024",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/laas.svg",
