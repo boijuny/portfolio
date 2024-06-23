@@ -59,7 +59,7 @@ interface DotMatrixProps {
 
 const DotMatrix: React.FC<DotMatrixProps> = ({
   colors = [[0, 0, 0]],
-  opacities = [0.04, 0.04, 0.04, 0.04, 0.04, 0.08, 0.08, 0.08, 0.08, 0.14],
+  opacities = [0.01, 0.01, 0.01, 0.1, 0.1, 0.1, 0.05, 0.05, 0.05, 0.1],
   totalSize = 4,
   dotSize = 2,
   shader = "",

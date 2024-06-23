@@ -7,17 +7,25 @@ const Approach = () => {
   return (
     <section className="w-full py-20">
       <h1 className="heading">
-        My <span className="text-purple">approach</span>
+        My <span className="text-purple">Expertise</span>
       </h1>
       {/* remove bg-white dark:bg-black */}
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         {/* add des prop */}
         <Card
-          title="Planning & Strategy"
-          icon={<AceternityIcon order="Phase 1" />}
-          des="We'll collaborate to map out your website's goals, target audience, 
-          and key functionalities. We'll discuss things like site structure, 
-          navigation, and content requirements."
+          title="Vision & AI"
+          icon={<AceternityIcon order="Vision & AI" />}
+          des="Leveraging the latest tools and technologies to develop practical solutions in advanced visual recognition and machine learning."
+          list={[
+            "Pose Estimation",
+            "YOLO",
+            "Pytorch",
+            "Tensorflow",
+            "Hugging Face",
+            "OpenCV",
+            "OpenMVG",
+            "AWS"
+          ]}
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
@@ -26,11 +34,17 @@ const Approach = () => {
           />
         </Card>
         <Card
-          title="Development & Progress Update"
-          icon={<AceternityIcon order="Phase 2" />}
-          des="Once we agree on the plan, I cue my lofi playlist and dive into
-          coding. From initial sketches to polished code, I keep you updated
-          every step of the way."
+          title="Control & Robotics"
+          icon={<AceternityIcon order="Control & Robotics" />}
+          des="Creating innovative systems with a focus on sophisticated control strategies and seamless integration of sensors and actuators."
+          list={[
+            "Advanced Control",
+            "C/C++",
+            "ROS",
+            "Gazebo",
+            "CopelliaSim",
+            "Rviz",
+          ]}
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -41,18 +55,22 @@ const Approach = () => {
               [255, 166, 158],
               [221, 255, 247],
             ]}
-            dotSize={2}
+            dotSize={1}
           />
           {/* Radial gradient for the cute fade */}
           {/* remove this one */}
           {/* <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" /> */}
         </Card>
         <Card
-          title="Development & Launch"
-          icon={<AceternityIcon order="Phase 3" />}
-          des="This is where the magic happens! Based on the approved design, 
-          I'll translate everything into functional code, building your website
-          from the ground up."
+          title="Embedded systems"
+          icon={<AceternityIcon order="Embedded systems" />}
+          des="Combining deep theoretical understanding with hands-on expertise in embedded systems to bring tangible solutions to life."
+          list = {[
+            "Systems Engineering",
+            "RTOS",
+            "SoC",
+            "FPGA"
+          ]}
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -73,11 +91,13 @@ const Card = ({
   children,
   // add this one for the desc
   des,
+  list,
 }: {
-  title: string;
+  title?: string;
   icon: React.ReactNode;
   children?: React.ReactNode;
   des: string;
+  list: string[];
 }) => {
   const [hovered, setHovered] = React.useState(false);
   return (
@@ -132,13 +152,28 @@ const Card = ({
         </h2>
         {/* add this one for the description */}
         <p
-          className="text-sm opacity-0 group-hover/canvas-card:opacity-100
+          className="text-m opacity-0 group-hover/canvas-card:opacity-100
          relative z-10 mt-4 group-hover/canvas-card:text-white text-center
          group-hover/canvas-card:-translate-y-2 transition duration-200"
           style={{ color: "#E4ECFF" }}
         >
           {des}
         </p>
+        {/* add this for the list */}
+        {/* Horizontal list as stickers */}
+        <ul
+          className="mt-4 flex flex-wrap justify-center opacity-0 group-hover/canvas-card:opacity-100
+         relative z-10 group-hover/canvas-card:-translate-y-2 transition duration-200"
+        >
+          {list.map((item, i) => (
+            <li
+              key={i}
+              className="bg-white dark:bg-black bg-opacity-20 dark:bg-opacity-20 px-2 py-1 m-1 text-s rounded-lg"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
