@@ -23,6 +23,7 @@ const Grid = () => {
             spareImg={item.spareImg}
             leftLists={item.leftLists}
             rightLists={item.rightLists}
+            pdf = {item.pdf}
           />
         ))}
       </BentoGrid>

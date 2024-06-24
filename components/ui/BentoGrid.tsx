@@ -6,6 +6,7 @@ import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
+import { publicDecrypt } from "crypto";
 
 export const BentoGrid = ({
   className,
@@ -37,6 +38,7 @@ export const BentoGridItem = ({
   spareImg,
   leftLists = [],  // Default empty array or handle dynamically
   rightLists = [], // Default empty array or handle dynamically
+  pdf,
 }: {
   className?: string;
   id: number;
@@ -48,6 +50,7 @@ export const BentoGridItem = ({
   spareImg?: string;
   leftLists?: string[];
   rightLists?: string[];
+  pdf?: string;
 }) => {
   const [copied, setCopied] = useState(false);
 
@@ -129,6 +132,18 @@ export const BentoGridItem = ({
           >
             {title}
           </div>
+          {/* for laas project add button */}
+          {pdf  && (
+            <div className="flex gap-2 -right">
+                <MagicButton
+                  title="View Project"
+                  icon={<IoCopyOutline />}
+                  position="right"
+                  handleClick={handleCopy}
+                  pdfUrl = {pdf}
+                />
+            </div>
+          )}
 
           {/* for the github 3d globe */}
           {id === 2 && <GridGlobe />}

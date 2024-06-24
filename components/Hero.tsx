@@ -1,4 +1,4 @@
-import { FaEye, FaEyeLowVision, FaLocationArrow } from "react-icons/fa6";
+import { FaDownload, FaEye, FaEyeLowVision, FaLocationArrow } from "react-icons/fa6";
 
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
@@ -59,12 +59,12 @@ const Hero = () => {
           <p className="text-center md:tracking-wider mb-4 text-s md:text-lg lg:text-l">
             Leveraging strong technical skills to solve real-world problems.
           </p>
-
-          <a href="#work">
+          <a href="#resume">
             <MagicButton
-              title="Show my work"
-              icon={<FaEye />}
+              title="Resume"
+              icon={<FaDownload />}
               position="right"
+              pdfUrl="/CV_EN_NP.pdf"
             />
           </a>
         </div>
