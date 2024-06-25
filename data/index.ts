@@ -248,9 +248,11 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    link: "https://github.com/boijuny",
   },
   {
     id: 2,
     img: "/link.svg",
+    link: "https://www.linkedin.com/in/matthieu-marchal/",
   },
 ];
